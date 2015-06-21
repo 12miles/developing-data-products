@@ -20,6 +20,12 @@ shinyUI(fluidPage(
 
       ),
     
-    mainPanel(plotOutput("map"))
-  )
+    mainPanel(
+      tabsetPanel(type = "tabs", 
+                  tabPanel("Plot", plotOutput("map")), 
+                  tabPanel("Summary", verbatimTextOutput("summary")), 
+                  tabPanel("National Average", verbatimTextOutput("weighted"))
+      )
+    )
 ))
+)
